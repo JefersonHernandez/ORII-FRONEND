@@ -37,6 +37,30 @@
           />
         </div>
         <form [formGroup] = "loginForm" (ngSubmit)="onLoginFacultad()">
+          <div class="field-wrap" style="margin-bottom: 1rem;">
+            <mat-form-field>
+              <mat-label>Facultad</mat-label>
+              <select matNativeControl required>
+                <option value="1"> Ciencias Agrarias y del Ambiente</option>
+                <option value="2"> Ciencias Básicas</option>
+                <option value="3"> Ciencias Empresariales</option>
+                <option value="4"> Ciencias de la Salud</option>
+                <option value="5"> Educación, Artes y Humanidades</option>
+                <option value="6">  Ingeniería</option>
+              </select>
+            </mat-form-field>
+            <!-- <input
+              formControlName="email"
+              type="email"
+              required
+              autocomplete="off"
+              placeholder="Correo Electronico *"
+            />
+            <mat-error *ngIf="isValidFill('email')">
+              {{getErrorMessage('email')}}
+            </mat-error> -->
+          
+          </div>
           <div class="field-wrap">
             <input
               formControlName="email"
@@ -106,7 +130,7 @@
           <div class="field-wrap">
             <input
               formControlName="password"
-              [type]="hide ?'password':'text'"
+              [type]="hide ?'text':'password'"
               required
               autocomplete="off"
               placeholder="Contraseña *"

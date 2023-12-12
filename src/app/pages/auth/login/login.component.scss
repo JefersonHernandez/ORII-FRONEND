@@ -130,8 +130,8 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 5px 10px;
-  background: none;
+  padding: 2px 5px;
+  background-color: white;
   background-image: none;
   border: 1px solid $gray-light;
   color: $black;
@@ -202,4 +202,12 @@ textarea {
 .forgot {
   margin-top: 0px;
   text-align: right;
+}
+mat-form-field {
+  width: 100%;
+  height: 100%;
+  background: none;
+  background-image: none;
+  color: $black;
+  border-radius: 0;
 }

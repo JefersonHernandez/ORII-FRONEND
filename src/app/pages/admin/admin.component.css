@@ -11,3 +11,14 @@ mat-card{
     text-align: justify;
     font-size: larger;
 }
+
+app-carousel{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    
+}
+h4{
+    margin-left: 5rem;
+    margin-top: 2rem;
+  }

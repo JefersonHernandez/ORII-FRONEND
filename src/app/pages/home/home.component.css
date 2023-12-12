@@ -1,6 +1,31 @@
 .background-home{
     height: 100%;
-    background-image: url("../../../assets/home.jpg");
+    background-image: url("../../../assets/fondo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    z-index: 1;
+    opacity: 0.4;
   }
+
+mat-card{
+  position: absolute;
+  z-index: 2;
+    margin: 1rem 4rem 1rem 4rem;
+}
+.text{
+    padding: 1rem 5rem 2rem 5rem;
+    text-align: justify;
+    font-size: larger;
+}
+
+app-carousel{
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    
+}
+h4{
+  margin-left: 5rem;
+  margin-top: 2rem;
+}
