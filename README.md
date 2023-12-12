@@ -1,6 +1,6 @@
 
 
-[![DatAnnouncement](https://raw.githubusercontent.com/JhonnyGCH/img/9b09e6adb1a6e47da9bd8c1891d44761b7770104/DatAnnouncement.png)]()
+[![ORII]([https://raw.githubusercontent.com/JhonnyGCH/img/9b09e6adb1a6e47da9bd8c1891d44761b7770104/DatAnnouncement.png](https://ww2.ufps.edu.co/public/imagenes/seccion/mesa_de_trabajo_orii.jpg))]()
 
 ## Table of contents 
 1. 🤔 [General Information](#1--general-information)
@@ -14,10 +14,7 @@
 
 ### ![Web aplication](https://img.shields.io/badge/Web_Aplication-ff69b4)
 
-DatAnnouncement is a web application that offers a wide variety of products to its users. The application allows you to visualize any type of item with its detailed information such as name, price and description, and also allows you to organize them by categories.
-
-We offer our customers the opportunity to offer products in a fast and secure way. DatAnnouncement provides a space to offer products online, with an easy to use interface, with features that make the online experience easy and convenient for users.
-
+Our Academic Mobility Management System is a cutting-edge web application designed to streamline and facilitate the process of managing academic mobility programs within educational institutions. This user-friendly platform serves as a comprehensive solution for both administrators and students, offering efficient tools for generating and tracking academic mobility requests.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.
 
 ## Development server
