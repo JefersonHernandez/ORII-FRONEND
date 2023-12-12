@@ -125,7 +125,7 @@ Project developed in the subject PRACTICA EN ING DE SISTEMAS of the [Systems Eng
   
 ## 8. 👩‍💻 Documentation
 
-[![Documentation](https://img.shields.io/badge/Documentaci%C3%B3n-blueviolet)](https://docs.google.com/document/d/1-ztj2LCm-sJa1J3FEBkTgmoJWWY3vL13iFOdEn__Mnw/edit?usp=sharing)
+[![Documentation](https://img.shields.io/badge/Documentaci%C3%B3n-blueviolet)](https://docs.google.com/document/d/1vl6RZQz2LTqvSXLEYgye_Yjyl4SNTDfr/edit?usp=sharing&ouid=101723247679026406698&rtpof=true&sd=true)
 
   
 
