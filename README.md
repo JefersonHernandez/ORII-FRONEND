@@ -1,6 +1,6 @@
 
 
-[![ORII]([https://raw.githubusercontent.com/JhonnyGCH/img/9b09e6adb1a6e47da9bd8c1891d44761b7770104/DatAnnouncement.png](https://ww2.ufps.edu.co/public/imagenes/seccion/mesa_de_trabajo_orii.jpg))]()
+#ORII
 
 ## Table of contents 
 1. 🤔 [General Information](#1--general-information)
