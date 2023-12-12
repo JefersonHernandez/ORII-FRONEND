@@ -1,0 +1,488 @@
+<section class="contenedor">
+    
+ 
+<div class="flex">
+  
+ <div>
+    <mat-card>
+        <h6 class="title"><b>Datos de La movilidad  {{id}}</b></h6>
+        <mat-card-content>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="tipo_mov">
+                  <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                  <td mat-cell *matCellDef="let element"> {{element.tipo_mov}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="clase_mov">
+                  <th mat-header-cell *matHeaderCellDef> Clase </th>
+                  <td mat-cell *matCellDef="let element"> {{element.clase_mov}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="facultad">
+                  <th mat-header-cell *matHeaderCellDef> Facultad </th>
+                  <td mat-cell *matCellDef="let element"> {{element.facultad}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="programa">
+                  <th mat-header-cell *matHeaderCellDef> Programa </th>
+                  <td mat-cell *matCellDef="let element"> {{element.programa}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fecha">
+                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td mat-cell *matCellDef="let element"> {{element.anio_mov}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="semestre">
+                    <th mat-header-cell *matHeaderCellDef> Semestre </th>
+                    <td class="input-xl" mat-cell *matCellDef="let element"> {{element.semestre_mov}} </td>
+                  </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              
+        </mat-card-content>
+      </mat-card>
+ </div>
+</div>
+
+
+
+<div class="flex">
+  <div>
+    <mat-card>
+      <h6 class="title"><b>Informacion del Actor</b></h6>
+        <mat-card-content> 
+
+          <div class="caja">
+            <mat-label><b>Actor :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.nombres}} {{data[0].actor.apellidos}}" 
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Rol :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].rol}}"
+              readonly
+            />
+          </div>
+
+          
+          <div class="caja">
+            <mat-label><b>Codigo :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.codigo}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Tipo Documento :</b></mat-label>&nbsp;
+            <input
+              class="input-ancho"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.tipo_doc}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Numero Documento :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.numero_doc}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Documento Expedido :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.expedido_en}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Fecha Expedicion :</b></mat-label>&nbsp;
+            <input
+            class="input-ancho"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.fecha_expedicion}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Sexo :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.sexo}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Estado Civil :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.est_civil}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Fecha Nacimiento :</b></mat-label>&nbsp;
+            <input
+            class="input-ancho"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.fecha_nac}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Pais Nacimiento :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.pais_nac}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Departamento :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.departamento}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Municipio :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.municipio}}"
+              readonly
+            />
+          </div>
+
+          
+          <div class="caja">
+            <mat-label><b>Celular :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.celular}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Email Personal :</b></mat-label>&nbsp;
+            <input
+            class="input-ancho"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.email}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Email Institucional :</b></mat-label>&nbsp;
+            <input
+              class="input-ancho"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actor.email_inst}}"
+              readonly
+            />
+          </div>
+
+         
+          </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+
+        <h6 class="title"><b>Detalles de La movilidad  {{id}}</b></h6>
+        <mat-card-content>
+          <div class="caja">
+            <mat-label><b>Actividad :</b></mat-label>&nbsp;
+            <input
+            class="input-xl"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].actividad_mov}}"
+              readonly
+            />
+          </div>
+            <div class="caja">
+            <mat-label><b>Descripcion de Actividad :</b> </mat-label>&nbsp;
+            <input
+            class="input-xl"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].descrip_act_mov}}"
+              readonly
+            />
+          </div>
+            <div class="caja">
+            <mat-label><b>Institucion Origen :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].inst_origen}}"
+              readonly
+            />
+          </div>
+           <div class="caja">
+            <mat-label><b>Direccion Origen :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].direccion_origen}}"
+              readonly
+            />
+          </div>
+          <div class="caja">
+            <mat-label><b>Pais Origen :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].pais_origen}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Departamento Origen :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].depart_origen}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Municipio Origen :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].municipio_origen}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Institucion Destino :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].municipio_origen}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Direccion Destino :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].direccion_destino}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Pais Destino :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].pais_destino}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Departamento Destino :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].depart_destino}}"
+              readonly
+            />
+          </div>
+
+          
+          <div class="caja">
+            <mat-label><b>Municipio Destino :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].municipio_destino}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Numero Dias Movilidad :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].numero_dias_mov}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Movilidad por Convenio :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].mov_convenio}}"
+              readonly
+            />
+          </div>
+
+          
+          <div class="caja">
+            <mat-label><b>N° Convenio :</b></mat-label>&nbsp;
+            <input
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].numero_convenio_mov}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Fuente Financiacion Nacional :</b></mat-label>&nbsp;
+            <input
+            class="input-xl"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].fuent_fin_nacional}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Valor Financiacion Nacional :</b></mat-label>&nbsp;
+            <input
+            class="input-ancho"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].valor_fin_nacional}}"
+              readonly
+            />
+          </div>
+
+          
+          <div class="caja">
+            <mat-label><b>Fuente Financiacion InterNacional :</b></mat-label>&nbsp;
+            <input
+            class="input-xl"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].fuent_fin_internacional}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Pais Financiacion InterNacional :</b></mat-label>&nbsp;
+            <input
+            class="input"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].pais_fin_internacional}}"
+              readonly
+            />
+          </div>
+
+          <div class="caja">
+            <mat-label><b>Valor Financiacion InterNacional :</b></mat-label>&nbsp;
+            <input
+            class="input-xl"
+              type="text"
+              autocomplete="off"
+              matInput
+              value="{{data[0].valor_fin_internacional}}"
+              readonly
+            />
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+</section>

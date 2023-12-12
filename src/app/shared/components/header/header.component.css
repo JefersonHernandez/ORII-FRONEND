@@ -1,0 +1,41 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 150px;
+  height: 60px;
+}
+
+.ori{
+  color: white;
+  margin: 0px auto;
+  font-size: 1.5rem;
+}
+.mat-menu-item a{
+  color: black;
+}
+
+.trapecio {
+ 
+  position: absolute;
+  width: 99.15%;
+  border-left: 20rem solid transparent; /* Ancho de la base inferior del trapecio */
+  /* border-right: 1rem  solid red; Ancho de la base inferior del trapecio */
+  border-top: 4rem solid #AE1619; /* Altura del trapecio y color */
+}
+
+.toolbar{
+  background-color:#f0f0f0;
+  color: #ffffff;
+  box-shadow: 2px 2px 10px rgba(153, 153, 153, 0.6);
+  
+}
+app-sidebar{
+  margin-left: 6rem;
+}

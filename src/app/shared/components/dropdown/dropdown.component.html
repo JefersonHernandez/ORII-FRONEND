@@ -1,0 +1,8 @@
+<div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+    <button class="menu-list"  ngbDropdownToggle><img src='../../../../assets/user.png' class='imgRedonda' />&nbsp;&nbsp; {{user}}&nbsp;[{{role}}]</button>
+    <div class="dropdown-menu" ngbDropdownMenu>
+        <button ngbDropdownItem>Mi Perfil</button>
+        <button ngbDropdownItem>Configuración</button>
+        <button ngbDropdownItem (click)="onLogout()">Cerrar Sesión</button>
+    </div>
+</div>

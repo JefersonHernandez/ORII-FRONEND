@@ -1,0 +1,17 @@
+.imgRedonda {
+    width:30px;
+    height:30px;
+    border-radius:150px;
+}
+
+.menu-list{
+    border-radius:10px;
+    outline:none;
+    border: 0;
+    box-shadow: none !important;
+    background-color: transparent;
+    color: white;
+}
+.btn-group{
+    color: white;
+}

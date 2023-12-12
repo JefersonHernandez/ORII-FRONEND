@@ -1,0 +1,51 @@
+
+<ng-container *ngIf="!isAdmin; else viewAdmin" >
+  
+  <button class="button" mat-button > <a style="color: white;" href="#/home">Inicio</a></button>
+  <button class="button"  mat-button [matMenuTriggerFor]="menu1">Movilidad</button>
+  
+  <mat-menu #menu1="matMenu" >
+    <button mat-menu-item value="registro" >
+      <a href="#/registro">Registro</a>
+    </button>
+  </mat-menu>
+  
+  <button class="button" mat-button  [matMenuTriggerFor]="menu2">Convenios</button>
+  <mat-menu #menu2="matMenu" >
+    <button mat-menu-item value="Institucionales">
+      <a routerLink="/login">Institucionales</a>
+    </button>
+    <button mat-menu-item value="Facultad">
+      <a routerLink="/login">Facultad</a>
+    </button>
+  </mat-menu>
+ 
+</ng-container>
+
+
+<ng-template #viewAdmin>
+  
+  <button class="button" mat-button > <a style="color: white;" href="#/admin">Inicio</a></button>
+  <button class="button" mat-button [matMenuTriggerFor]="menu1">Movilidad</button>
+  <mat-menu #menu1="matMenu" >
+    <button mat-menu-item value="todas" >
+     <a href="#/todas">Ver todas</a>
+    </button>
+    <button mat-menu-item value="registro" >
+      <a href="#/registro">Registro</a>
+    </button>
+  </mat-menu>
+  
+  
+  
+  <button class="button" mat-button [matMenuTriggerFor]="menu2">Convenios</button>
+  <mat-menu #menu2="matMenu" >
+    <button mat-menu-item value="Institucionales">
+      <a routerLink="/login">Institucionales</a>
+    </button>
+    <button mat-menu-item value="Facultad">
+      <a routerLink="/login">Facultad</a>
+    </button>
+  </mat-menu>
+  
+</ng-template>

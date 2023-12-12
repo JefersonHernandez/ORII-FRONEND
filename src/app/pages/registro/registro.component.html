@@ -1,0 +1,856 @@
+<form form [formGroup] = "actorForm" (ngSubmit)="onSubmit()"
+        style="border: gainsboro 1px solid; padding: 1rem;  ">
+       
+        <div class="center">
+          
+          <h4 class="title">Formulario de Ingreso de Movilidades</h4>
+          <br>
+          <h5 class="title2"><strong>Información Personal</strong></h5>
+          <p class="justify">Este formulario recopila información necesaria de la parsona para brindar nuestros servicios. 
+            La privacidad es importante; los datos se manejarán de forma segura y confidencial.
+            Los campos marcados con (*) son obligatorios. </p>
+        </div>
+        <div id="filtrar">
+          <mat-form-field >
+            <input matInput (keyup)="applyFilter($event.target)" placeholder="Buscar">
+          </mat-form-field>
+        </div>
+        
+        <div class="form-content" style="border: gainsboro 1px solid; padding: 1rem;  height:90%; ">
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Nombres</mat-label>
+            <input
+              id="nombre"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="nombres"
+            />
+            <mat-error>Mínimo 3 caracteres</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input
+              id="apellido"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="apellidos"
+            />
+            
+            <mat-error>Mínimo 3 caracteres</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Codigo</mat-label>
+            <input
+              id="cod"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="codigo"
+            />
+            
+            <mat-error>Solo se permiten numeros</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+            id="email"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="email"
+            />
+            
+            <mat-error>No es un email valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Email Institucional</mat-label>
+            <input
+            id="email_inst"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="email_inst"
+            />
+            
+            <mat-error>No es un email valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="field" color="accent" appearance="fill" >
+            <mat-label>Tipo de Documento</mat-label>
+            <mat-select formControlName="tipo_doc" id="tipo_doc">
+
+              <mat-option  value="C.C. - Cédula De Ciudadanía">
+                <a style="text-decoration: none; color: cadetblue;"
+                >C.C. - Cédula De Ciudadanía</a>
+              </mat-option>
+
+              <mat-option value="C.E. - Cédula De Extranjería">
+                <a style="text-decoration: none; color: cadetblue;"
+                >C.E. - Cédula De Extranjería</a>
+              </mat-option>
+
+              <mat-option value="P.S. - Pasaporte">
+                <a style="text-decoration: none; color: cadetblue;"
+                >P.S. - Pasaporte</a>
+              </mat-option>
+
+              <mat-option value="C.A. - Certificado Cabildo">
+                <a style="text-decoration: none; color: cadetblue;"
+                >C.A. - Certificado Cabildo</a>
+              </mat-option>
+
+              <mat-option value="T.I. - Tarjeta De Identidad">
+                <a style="text-decoration: none; color: cadetblue;"
+                >T.I. - Tarjeta De Identidad</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>N° Documento</mat-label>
+            <input
+            id="documento"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="numero_doc"
+            />
+            
+            <mat-error>Solo numeros</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Expedido en</mat-label>
+            <input
+            id="expedido"
+              type="text"
+              autocomplete="off"
+              matInput
+              formControlName="expedido_en"
+            />
+            
+            <mat-error>Mínimo 3 caracteres</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="example-full-width">
+            <mat-label>Fecha De Expedición </mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fecha_expedicion" id="fecha_expedicion">
+            <mat-hint>Dia/Mes/Año</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          
+
+          <mat-form-field color="accent" appearance="fill" >
+            <mat-label>Sexo Biológico</mat-label>
+            <mat-select formControlName="sexo" id="sexo">
+              <mat-option  value="Hombre" >
+                <a style="text-decoration: none; color: cadetblue;"
+                >Hombre</a>
+              </mat-option>
+              <mat-option value="Mujer">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Mujer</a>
+              </mat-option>
+
+              <mat-option value="Otro">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Otro</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="fill" >
+            <mat-label>Estado Civil </mat-label>
+            <mat-select formControlName="est_civil" id="est_civil">
+              <mat-option  value="Soltero(A)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Soltero(A)</a>
+              </mat-option>
+              <mat-option value="Casado(A)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Casado(A)</a>
+              </mat-option>
+
+              <mat-option value="Divorciado(A)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Divorciado(A)</a>
+              </mat-option>
+
+              <mat-option value="Viudo(A)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Viudo(A)</a>
+              </mat-option>
+
+              <mat-option value="Unión Libre">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Unión Libre</a>
+              </mat-option>
+
+              <mat-option value="Religioso">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Religioso(A)</a>
+              </mat-option>
+
+              <mat-option value="Separado(A)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Separado(A)</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="example-full-width">
+            <mat-label>Fecha De Nacimiento </mat-label>
+            <input matInput [matDatepicker]="date" formControlName="fecha_nac" id="fecha_nac">
+            <mat-hint>Dia/Mes/Año</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="date">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #date></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field  color="accent" appearance="fill" >
+            <mat-label>Pais de Nacimiento</mat-label>
+            <mat-select #pais [(ngModel)]="selected" formControlName="pais_nac" id="pais_nac">
+              <mat-option *ngFor="let pais of paises; let i = index" value="{{paises[i].nombre}}">
+               <a >{{paises[i].nombre}}</a>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel="always">
+            <mat-label>Departamento de Nacimiento</mat-label>
+            <input id="departamento"
+              type="text"
+              placeholder="Ingrese Departamento"
+              autocomplete="off"
+              matInput
+              formControlName="departamento"
+            />
+            <mat-error>No es un departamento valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" floatLabel="always" appearance="outline">
+            <mat-label>Municipio de Nacimiento</mat-label>
+            <input 
+              id="municipio"
+              type="text"
+              placeholder="Ingrese Municipio"
+              autocomplete="off"
+              matInput
+              formControlName="municipio"
+            />
+            
+            <mat-error>No es un municipio valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="field" floatLabel='always' appearance="outline">
+            <mat-label>Numero Celular</mat-label>
+            <input id="phone"
+              type="tel"
+              autocomplete="off"
+              matInput
+              formControlName="celular"
+            />
+            <mat-error>No es un numero valido</mat-error>
+          </mat-form-field>
+          
+          <br>
+          
+          
+          
+          
+        </div>
+        <br>
+</form>
+
+
+<form form [formGroup] = "movilidadForm" (ngSubmit)="onSubmit()"
+        style="border: gainsboro 1px solid; padding: 1rem;  "
+      >
+      <div class="center">
+        <h5><strong>Datos de Movilidad</strong></h5>
+        <br>
+        <p class="justify">Este formulario recopila información necesaria de la movilidad. 
+          La privacidad es importante; los datos se manejarán de forma segura y confidencial.
+          Los campos marcados con (*) son obligatorios. </p>
+      </div>
+        
+        <div class="form-content" style="border: gainsboro 1px solid; padding: 1rem;  height:90%; margin-bottom: 6%;">
+
+         
+          <mat-form-field  color="accent" appearance="fill" >
+            <mat-label>Seleccione Actor</mat-label>
+            <mat-select formControlName="rol">
+              <mat-option  value="Estudiante">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Estudiante</a>
+              </mat-option>
+              <mat-option value="Docente">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Docente</a>
+              </mat-option>
+              <mat-option value="Investigador">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Investigador</a>
+              </mat-option>
+              <mat-option value="Administrativo/Gestor">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Administrativo o Gestor</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+        
+          <mat-form-field  color="accent" appearance="fill" >
+            <mat-label>Tipo de Movilidad</mat-label>
+            <mat-select formControlName="tipo_mov">
+              <mat-option  value="Internacional">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Internacional</a>
+              </mat-option>
+              <mat-option value="Nacional">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Nacional</a>
+              </mat-option>
+              <mat-option value="Virtual">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Virtual</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="fill" >
+            <mat-label>Clase de Movilidad</mat-label>
+            <mat-select formControlName="clase_mov">
+              <mat-option  value="Movilidad Saliente">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Movilidad Saliente</a>
+              </mat-option>
+              <mat-option value="Movilidad Entrante">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Movilidad Entrante</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="field" color="accent" appearance="fill" >
+            <mat-label>Seleccione Facultad</mat-label>
+            <mat-select (selectionChange)="listar($event.value)" formControlName="facultad" >
+              <mat-option  value="Ciencias Agrarias y del Ambiente">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Ciencias Agrarias y del Ambiente</a>
+              </mat-option>
+              <mat-option value="Ciencias Básicas">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Ciencias Básicas</a>
+              </mat-option>
+
+              <mat-option value="Ciencias Empresariales">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Ciencias Empresariales</a>
+              </mat-option>
+
+              <mat-option value="Ciencias de la Salud">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Ciencias de la Salud</a>
+              </mat-option>
+
+              <mat-option value="Educación, Artes y Humanidades">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Educación, Artes y Humanidades</a>
+              </mat-option>
+
+              <mat-option value="Ingenieria">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Ingenieria</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent"  color="accent" appearance="fill" >
+            <mat-label>Seleccione Programa</mat-label>
+            <mat-select #listPrograms formControlName="programa">
+              <mat-option *ngFor="let programa of programasUni; let i = index" value="{{programasUni[i].name}}">
+               <a >{{programasUni[i].name}}</a>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="example-full-width">
+            <mat-label>Año de Movilidad</mat-label>
+            <input matInput [matDatepicker]="dateMov" formControlName="anio_mov">
+            <mat-hint>Dia/Mes/Año</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="dateMov">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #dateMov></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="field" appearance="fill" >
+            <mat-label>Semestre de Movilidad</mat-label>
+            <mat-select formControlName="semestre_mov">
+              <mat-option  value="I Semestre (Enero - Junio)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >I Semestre (Enero - Junio)</a>
+              </mat-option>
+              <mat-option value="II Semestre (Julio - Diciembre)">
+                <a style="text-decoration: none; color: cadetblue;"
+                >II Semestre (Julio - Diciembre)</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="field" appearance="fill" >
+            <mat-label>Seleccione Actividad</mat-label>
+            <mat-select (selectionChange)="mostrarOtro($event.value)" formControlName="actividad_mov">
+              <mat-option  value="Semestre Académico De Intercambio, Desarrollo De Asignaturas">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Semestre Académico De Intercambio, Desarrollo De Asignaturas</a>
+              </mat-option>
+              <mat-option value="Pasantía">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Pasantía</a>
+              </mat-option>
+
+              <mat-option value="Misión">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Misión</a>
+              </mat-option>
+
+              <mat-option value="Asistencia A Eventos">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Asistencia A Eventos</a>
+              </mat-option>
+
+              <mat-option value="Rotación Médica">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Rotación Médica</a>
+              </mat-option>
+
+              <mat-option value="Curso De Español">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Curso De Español</a>
+              </mat-option>
+
+              <mat-option value="Práctica Profesional">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Práctica Profesional</a>
+              </mat-option>
+
+              <mat-option value="Trabajo De Grado">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Trabajo De Grado</a>
+              </mat-option>
+
+              <mat-option value="Doble Titulación">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Doble Titulación</a>
+              </mat-option>
+
+              <mat-option value="Visita Técnica O Académica">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Visita Técnica O Académica</a>
+              </mat-option>
+
+              <mat-option value="Otro">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Otro</a>
+              </mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+
+
+         
+          <mat-form-field color="accent" *ngIf="!disabled" appearance="outline" floatLabel='always'>
+            <mat-label>Otro</mat-label>
+            <input type="text"
+            placeholder="Ingrese Actividad"
+            autocomplete="off"
+            matInput
+            formControlName="otroActividad">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel='always' class="field">
+            <mat-label>Descripcion de la Actividad</mat-label>
+            <input type="text"
+            placeholder="Breve Resumen de la Movilidad "
+            autocomplete="off"
+            matInput
+            formControlName="descrip_act_mov">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel='always' class="field">
+            <mat-label>Institucion Nacional o Extranjera de Origen</mat-label>
+            <input type="text"
+            placeholder="Ingrese la Institucion"
+            autocomplete="off"
+            matInput
+            formControlName="inst_origen">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel='always' class="field">
+            <mat-label>Dirección de la Institucion de Origen</mat-label>
+            <input type="text"
+            placeholder="Ingrese la Dirección"
+            autocomplete="off"
+            matInput
+            formControlName="direccion_origen">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field  color="accent" appearance="fill" >
+            <mat-label>Pais de Origen</mat-label>
+            <mat-select  #paisOri formControlName="pais_origen">
+              <mat-option *ngFor="let pais of paises; let i = index" value="{{paises[i].nombre}}">
+               <a >{{paises[i].nombre}}</a>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel="always">
+            <mat-label>Departamento de Origen</mat-label>
+            <input
+              type="text"
+              placeholder="Ingrese Departamento"
+              autocomplete="off"
+              matInput
+              formControlName="depart_origen"
+            />
+            <mat-error>No es un departamento valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" floatLabel="always" class="field" appearance="outline">
+            <mat-label color="accent">Municipio/Provincia de Origen</mat-label>
+            <input
+              type="text"
+              placeholder="Ingrese Municipio/Provincia"
+              autocomplete="off"
+              matInput
+              formControlName="municipio_origen"
+            />
+            
+            <mat-error>No es un municipio valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel='always' class="field">
+            <mat-label>Institucion Nacional o Extranjera de Destino</mat-label>
+            <input type="text"
+            placeholder="Ingrese la Institucion"
+            autocomplete="off"
+            matInput
+            formControlName="inst_destino">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel='always' class="field">
+            <mat-label>Dirección de la Institucion de Destino</mat-label>
+            <input type="text"
+            placeholder="Ingrese la Dirección"
+            autocomplete="off"
+            matInput
+            formControlName="direccion_destino">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field  color="accent" appearance="fill" >
+            <mat-label>Pais de Destino</mat-label>
+            <mat-select  #paisOri formControlName="pais_destino">
+              <mat-option *ngFor="let pais of paises; let i = index" value="{{paises[i].nombre}}">
+               <a >{{paises[i].nombre}}</a>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel="always">
+            <mat-label>Departamento de Destino</mat-label>
+            <input
+              type="text"
+              placeholder="Ingrese Departamento"
+              autocomplete="off"
+              matInput
+              formControlName="depart_destino"
+            />
+            <mat-error>No es un departamento valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" floatLabel="always" class="field" appearance="outline">
+            <mat-label color="accent">Municipio/Provincia de Destino</mat-label>
+            <input
+              type="text"
+              placeholder="Ingrese Municipio/Provincia"
+              autocomplete="off"
+              matInput
+              formControlName="municipio_destino"
+            />
+            
+            <mat-error>No es un municipio valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" appearance="outline" floatLabel='always'>
+            <mat-label>N° Dias en Movilidad</mat-label>
+            <input type="number"
+            placeholder="Ingrese numero de Dias"
+            autocomplete="off"
+            matInput
+            formControlName="numero_dias_mov">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" class="field" appearance="fill" >
+            <mat-label>Movilidad por Convenio</mat-label>
+            <mat-select (selectionChange)="mostrarInputConvenio($event.value)">
+              <mat-option  value="1">
+                <a style="text-decoration: none; color: cadetblue;"
+                >SI</a>
+              </mat-option>
+              <mat-option value="2">
+                <a style="text-decoration: none; color: cadetblue;"
+                >NO APLICA</a>
+              </mat-option>
+             
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" *ngIf="!convenioDisabled" appearance="outline" floatLabel='always'>
+            <mat-label>Nombre del Convenio</mat-label>
+            <input type="text"
+            placeholder="Ingrese Convenio"
+            autocomplete="off"
+            matInput
+            formControlName="mov_convenio">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+          <mat-form-field color="accent" *ngIf="!convenioDisabled" appearance="outline" floatLabel='always'>
+            <mat-label>Numero del Convenio</mat-label>
+            <input type="number"
+            placeholder="Ingrese N° Convenio"
+            autocomplete="off"
+            matInput
+            formControlName="numero_convenio_mov">
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+          <input *ngIf="convenioDisabled" type="hidden" value="N/A"  formControlName="mov_convenio">
+
+          <mat-form-field color="accent" class="fieldFi" appearance="fill" >
+            <mat-label>Fuente De Financiación Nacional </mat-label>
+            <mat-select  formControlName="fuent_fin_nacional">
+              <mat-option  value="Recursos UFPS">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos UFPS</a>
+              </mat-option>
+              <mat-option value="Recursos Otras IES">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Otras IES</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Colciencias">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Colciencias</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Sena">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Sena</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio Del Interior Y Justicia">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio Del Interior Y Justicia</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Relaciones Exteriores">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Relaciones Exteriores</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Hacienda Y Crédito Público">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Hacienda Y Crédito Público</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Defensa Nacional">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Defensa Nacional</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Agricultura Y Desarrollo Rural">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Agricultura Y Desarrollo Rural</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Protección Social">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Protección Social</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Energía Y Minas">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Energía Y Minas</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Comercio, Industria Y Turismo">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Comercio, Industria Y Turismo</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Educación Nacional">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Educación Nacional</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Ambiente, Vivienda Y Desarrollo Territorial">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Ambiente, Vivienda Y Desarrollo Territorial</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Comunicaciones">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Comunicaciones</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Nacionales - Ministerio De Cultura">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Nacionales - Ministerio De Cultura</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Departamentales">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Departamentales</a>
+              </mat-option>
+
+              <mat-option value="Recursos Públicos Municipales O Distritales">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Públicos Municipales O Distritales</a>
+              </mat-option>
+
+              <mat-option value="Recursos Privados">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Privados</a>
+              </mat-option>
+
+              <mat-option value="Otras Entidades">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Otras Entidades</a>
+              </mat-option>
+
+              <mat-option value="Recursos Propios">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Propios</a>
+              </mat-option>
+
+              <mat-option value="N/A">
+                <a style="text-decoration: none; color: cadetblue;"
+                >N/A</a>
+              </mat-option>
+       
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" floatLabel="always" class="field" appearance="outline">
+            <mat-label color="accent">Valor De La Financiación Nacional En Pesos </mat-label>
+            <input matInput currencyMask placeholder="$ 0,000.00" value=""  formControlName="valor_fin_nacional">
+            
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field color="accent" class="fieldFi" appearance="fill" >
+            <mat-label>Fuente De Financiación Internacional  </mat-label>
+            <mat-select formControlName="fuent_fin_internacional">
+              <mat-option  value="Sector Empresarial">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Sector Empresarial</a>
+              </mat-option>
+              <mat-option value="Sector Administración Pública">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Sector Administración Pública</a>
+              </mat-option>
+
+              <mat-option value="Centros De Investigación Y Desarrollo Tecnológico">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Centros De Investigación Y Desarrollo Tecnológico</a>
+              </mat-option>
+
+              <mat-option value="4">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Hospitales Y Clínicas</a>
+              </mat-option>
+
+              <mat-option value="Instituciones Privadas Sin Ánimo De Lucro">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Instituciones Privadas Sin Ánimo De Lucro</a>
+              </mat-option>
+
+              <mat-option value="Instituciones De Educación Superior">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Instituciones De Educación Superior</a>
+              </mat-option>
+
+              <mat-option value="Organismo Multilateral">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Organismo Multilateral</a>
+              </mat-option>
+
+              <mat-option value="Recursos Propios">
+                <a style="text-decoration: none; color: cadetblue;"
+                >Recursos Propios</a>
+              </mat-option>
+
+              <mat-option value="N/A">
+                <a style="text-decoration: none; color: cadetblue;"
+                >N/A</a>
+              </mat-option>
+
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="input-xl" color="accent" appearance="fill" >
+            <mat-label>Pais de Financiación Internacional</mat-label>
+            <mat-select  formControlName="pais_fin_internacional">
+              <mat-option *ngFor="let pais of paises; let i = index" value="{{paises[i].nombre}}">
+               <a >{{paises[i].nombre}}</a>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field color="accent" floatLabel="always" class="field" appearance="outline">
+            <mat-label color="accent">Valor De La Financiación Internacional En Pesos </mat-label>
+            <input  matInput currencyMask placeholder="$ 0,000.00" value=""  formControlName="valor_fin_internacional">
+            
+            <mat-error>No es un valor valido</mat-error>
+          </mat-form-field>
+
+        </div>
+
+
+        <br>
+
+        <button mat-stroked-button color="primary" class="boton-guardar" type="submit">Guardar</button>
+        <br>
+        <br>
+        <br>
+        <br>
+</form>
+  

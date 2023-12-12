@@ -1,0 +1,157 @@
+<div class="form">
+  <section class="mat-typography">
+  <ul class="tab-group">
+    <ng-container *ngIf="!isOri; else viewOri">
+      <li class="tab active">
+        <a
+          ng-model="active"
+          routerLinkActive="activebutton"
+          (click)="isOri = !isOri"
+          >FACULTAD</a
+        >
+      </li>
+      <li class="tab">
+        <a 
+          ng-model="active"
+          routerLinkActive="activebutton"
+          (click)="isOri = !isOri"
+          ><img
+            src="../../../assets/Logo2.png"
+            width="60"
+            height="18"
+            alt="logo"
+        /></a>
+      </li>
+    </ng-container>
+  </ul>
+  <div class="tab-content">
+    <ng-container *ngIf="!isOri; else viewLoginOri">
+      <div id="signup">
+        <h2>Ingresar como Facultad</h2>
+        <div id="logo-login">
+          <img
+            src="../../../assets/ufps.png"
+            width="80"
+            height="50"
+            alt="logo"
+          />
+        </div>
+        <form [formGroup] = "loginForm" (ngSubmit)="onLoginFacultad()">
+          <div class="field-wrap">
+            <input
+              formControlName="email"
+              type="email"
+              required
+              autocomplete="off"
+              placeholder="Correo Electronico *"
+            />
+            <mat-error *ngIf="isValidFill('email')">
+              {{getErrorMessage('email')}}
+            </mat-error>
+          
+          </div>
+
+          <div class="field-wrap">
+            <input
+              formControlName="password"
+              [type]="hide ?'text':'password'"
+              required
+              autocomplete="off"
+              placeholder="Contraseña *"
+            />
+            <a mat-icon-button matSuffix (click)="hide=!hide">
+              <mat-icon>{{hide ? "visibility" :"visibility_off"}}</mat-icon>
+            </a>
+            <mat-error *ngIf="isValidFill('password')">
+              {{getErrorMessage('password')}}
+            </mat-error>
+
+            <p class="forgot"><a href="#">Olvido su contraseña?</a></p>
+          </div>
+          
+
+          
+
+          <button mat-button  type="submit" class="button button-block">Iniciar</button>
+        </form>
+      </div>
+    </ng-container>
+
+    <ng-template #viewLoginOri>
+      <div id="login">
+        <h2>Ingresar como</h2>
+        <div id="logo-login">
+          <img
+            src="../../../assets/Logo.png"
+            width="80"
+            height="50"
+            alt="logo"
+          />
+        </div>
+        <form [formGroup] = "loginForm" (ngSubmit)="onLoginOri()">
+          <div class="field-wrap">
+            <input
+              formControlName="email"
+              type="email"
+              required
+              autocomplete="off"
+              placeholder="Correo Electronico *"
+            />
+
+            <mat-error *ngIf="isValidFill('email')">
+              {{getErrorMessage('email')}}
+            </mat-error>
+          </div>
+
+          <div class="field-wrap">
+            <input
+              formControlName="password"
+              [type]="hide ?'password':'text'"
+              required
+              autocomplete="off"
+              placeholder="Contraseña *"
+            />
+            <a mat-icon-button matSuffix (click)="hide=!hide">
+              <mat-icon>{{hide ? "visibility" :"visibility_off"}}</mat-icon>
+            </a>
+            <mat-error *ngIf="isValidFill('password')">
+              {{getErrorMessage('password')}}
+            </mat-error>
+
+            <p class="forgot"><a href="#">Olvido su contraseña?</a></p>
+          </div>
+
+          
+
+          <button mat-button   type="submit" class="button button-block">Iniciar</button>
+        </form>
+      </div>
+    </ng-template>
+
+    <ng-template #viewOri>
+      <li class="tab">
+        <a
+          ng-model="active"
+          routerLinkActive="activebutton"
+          (click)="isOri = !isOri"
+          >FACULTAD</a
+        >
+      </li>
+      <li class="tab active">
+        <a
+          ng-model="active"
+          routerLinkActive="activebutton"
+          (click)="isOri = !isOri"
+          ><img
+            src="../../../assets/Logo2.png"
+            width="70"
+            height="18"
+            alt="logo"
+        /></a>
+      </li>
+    </ng-template>
+  </div>
+</section>
+  <!-- tab-content -->
+</div>
+<!-- /form -->

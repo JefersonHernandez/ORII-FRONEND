@@ -1,0 +1,31 @@
+<!-- style="background-color:#AE1619 ; color: #ffffff;"] -->
+<mat-toolbar  class="toolbar">
+  <div class="trapecio"></div>
+  <ng-container *ngIf="!isLogged; else viewUser">
+    
+    <div class="container-logo">
+      <a href="#/admin"><img class="logo" src="../../../../assets/Logo2.png" alt="logo" href></a>
+    </div>
+    <span class="spacer"></span>
+    <div>
+      <a 
+      mat-raised-button color="accent">Login</a>
+      
+    </div>
+  </ng-container>
+  
+</mat-toolbar>
+
+<ng-template #viewUser style="color:#AE1619 ;"> 
+  <div class="container-logo">
+    
+    <a href="#/admin"><img class="logo" src="../../../../assets/Logo2.png" alt="logo" href></a>
+  </div>
+  <!-- <button mat-icon-button (click)="onToggleSidenav()">
+    <mat-icon>list</mat-icon>
+  </button> -->
+  <app-sidebar></app-sidebar>
+  <span class="spacer"></span>
+  <app-dropdown></app-dropdown>
+</ng-template>
+

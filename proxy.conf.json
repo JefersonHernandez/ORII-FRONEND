@@ -1,0 +1,14 @@
+{
+    "/names.json/*":{
+        "target":"http://country.io",
+        "secure":false,
+        "logLevel":"debug",
+        "changeOrigin":true
+    },
+    "/phone.json/*":{
+        "target":"http://country.io",
+        "secure":false,
+        "logLevel":"debug",
+        "changeOrigin":true
+    }
+}

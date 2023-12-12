@@ -1,0 +1,14 @@
+.button{
+    background-color: #AE1619;
+    color: white;
+}
+mat-card{
+    margin: 4rem;
+}
+.downloadAll{
+    text-align: end;
+    justify-content: end;
+    align-items: end;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
