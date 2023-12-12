@@ -7,8 +7,6 @@
 2. 💻 [Architecture](#2--architecture)
 3. 🔗 [Tecnologies](#3--tecnologies)
 4. ⚡ [Instalation](#4-%EF%B8%8F-instalation)
-5. 📫 [License](#5--license)
-6. 👯‍ [Authors](#6-%EF%B8%8F-authors)
 7. 🏛 [Academic Institution](#7--academic-institution)
 8. 👩‍💻 [Documentation](#8--documentation)
 
@@ -179,23 +177,6 @@ Ruta: config/database.yml --> Development and test must have the postgres creden
   docker exec -it <ID> rake db:fixtures:load
 ```
 
-## 5. 📫 License
-
-![Licencia](https://img.shields.io/badge/Licencia-MTI-blue)
-
-**Free Software !!! :D**
-
-## 6. 👯‍♀️ Authors
-
-- [@Gederson Gustavo](https://github.com/GedersonG)
-
-- [@Camilo Ramirez](https://www.github.com/CamiloRamirezP)
-
-- [@Daniela Sanchez](https://www.github.com/DanielaSanchezb)
-
-- [@Jeison Ferrer](https://www.github.com/joferrer)
-
-- [@Jhonny Guarin](https://www.github.com/JhonnyGCH)
 
   
 ## 7. 🏛 Academic Institution
