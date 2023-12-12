@@ -46,21 +46,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-#### ![Add to Favorites](https://img.shields.io/badge/Add_to_Favorites-yellow)
-If you find yourself interested in a product, but are not sure whether to purchase it at that time, you can add it to your "Favorites". When you click on the ⭐ on the product page, it will be saved in a list of products that you can access from your account at any time. This allows you to keep track of the products you are interested in and view them later without having to search for them again.
 
-#### ![Filtering](https://img.shields.io/badge/Filtering-9cf)
-At DatAnnouncement, we offer filtering options so you can find the products you need faster and more efficiently. You can filter search results by price, category, location, and other criteria to narrow results to specific products. In addition, you can also sort results by price, popularity, novelty, and more.
-
-#### ![Add, edit or delete products](https://img.shields.io/badge/Add,_edit_or_delete_products-succes)
-As a DatAnnouncement user, you can add new products, edit your existing product information and delete unwanted products from your account. All of this is easy to do by logging into the product and selecting the edit or delete option.
-
-#### ![Add, edit or delete categories](https://img.shields.io/badge/Add,_edit_or_delete_categories-informational)
-As an administrator in DatAnnouncement, you can add, edit or delete categories from the configuration section of the web application.
-
-<div align="center">
-   <img src="https://devloteq.com/wp-content/uploads/2020/07/tiendas-en-linea.png" width="450" height="340">
-</div>
 
 
 ## 2. 💻 Architecture
