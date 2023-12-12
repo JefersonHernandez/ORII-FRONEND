@@ -86,92 +86,28 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 To run the application, it is required to have previously installed:
 
-* Ruby  3.1.4 (https://rubyinstaller.org/downloads/ --> For windows)
+* Node  18.18.0 (https://nodejs.org/en/download/releases --> For windows)
    
-* PostgreSQL >=14 
+* Angular >= 17 
 
 
 To run the project on a terminal:
 
-*  Windows (Install package manager Blundle)
+*  Install a package and any packages that it depends on. )
 ```sh
-gem install blunder
-```
-* Install the Gemfile gems
-```sh
-bundle install
-```
-* Create database in development and database in test
-```sh
-rake db:create
-```
-* Create tables and relationships DB
-```sh
-rake db:migrate
-```
-* Load testing fixtures
-```sh
-rake db:fixtures:load
+npm i --force
 ```
 * Run project
 ```sh
-Rails server
-```
-Ruta: config/database.yml --> Development and test must have the postgres credentials installed.
-
-![IMPORTANT](https://img.shields.io/badge/IMPORTANT-red): You must make sure that the credentials match your credentials configured in your PosgreSQL in **database.yml**.
-
-```sh
-# the same name as the operating system user running Rails.
-  username: postgres
-
-  # The password associated with the postgres role (username).
-  password: password
-  # password: root
-
+ng s -o
 ```
 
 
-
-## Run in Docker
-
-![IMPORTANT](https://img.shields.io/badge/IMPORTANT-red): Before starting the database configuration, you must ensure in the file ./config/database.yml that the assigned host is "db" and not "localhost", both in the development and test environments.
+![IMPORTANT](https://img.shields.io/badge/IMPORTANT-red): You must make sure that the versions match your versions configured in your PC .
 
 ```sh
-  host: db 
-  # host: localhost
-```
-### Linux
-
-* Run dockers
-```sh
-  sudo docker-compose up -d --build
-```
-* Check status (view ID docker)
-```sh
-  sudo docker container ps
-```
-* Exec rake for init DB
-```sh
-  sudo docker exec -it ID rake db:migrate                          
-  sudo docker exec -it ID rake db:fixtures:load
-```
-
-
-### Windows
-
-* Run dockers
-```sh
-  docker-compose up -d --build
-```
-* Check status (view ID docker)
-```sh
-  docker container ps
-```
-* Exec rake for init DB
-```sh
-  docker exec -it <ID> rake db:migrate                          
-  docker exec -it <ID> rake db:fixtures:load
+node -v
+ng version
 ```
 
 
