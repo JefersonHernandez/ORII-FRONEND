@@ -1,0 +1,20 @@
+# Usa la imagen base de Node.js en su versión 18, con Alpine Linux para una imagen más ligera.
+FROM node:18-alpine
+
+# Establece el directorio de trabajo dentro del contenedor como /app.
+WORKDIR /app
+
+# Copia el archivo package.json y package-lock.json al directorio de trabajo del contenedor.
+COPY package.json package-lock.json ./
+
+# Instala las dependencias del proyecto utilizando npm.
+RUN npm install --force
+
+# Copia todos los archivos del directorio actual al directorio de trabajo del contenedor.
+COPY . .
+
+# Expone el puerto 4200 para que pueda ser accedido desde fuera del contenedor.
+EXPOSE 4200
+
+# Establece el comando predeterminado para iniciar la aplicación cuando el contenedor se ejecute.
+CMD ["npm", "start"]
